@@ -109,6 +109,23 @@ namespace AssignmentLinq02
             // Result = Seq01.SequenceEqual(Seq02);
             // Console.WriteLine(Result);
             #endregion
+            #region Zipping Operator ZIP 
+            // string[] Names = { "Omar", "Amr", "Ahmed", "May" };
+            // int[] Numbers = Enumerable.Range(1, 10).ToArray();
+            // char[] Chars = { 'A', 'B', 'C', 'D', 'E' };
+            //   var Result = Names.Zip(Numbers); 
+            //(Omar, 1) 
+            //(Amr, 2) 
+            //(Ahmed, 3) 
+            //(May, 4) 
+            //(Aya, 5) 
+            // var Result = Names.Zip(Numbers, (Name, Number) => new { index = Number, Name }); 
+            //  var Result = Names.Zip(Numbers, Chars);
+            // foreach (var item in Result)
+            // {
+            //     Console.WriteLine(item);
+            // }
+            #endregion
 
         }
     }
