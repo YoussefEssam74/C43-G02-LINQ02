@@ -96,7 +96,19 @@ namespace AssignmentLinq02
             //      Console.Write($"{item}, ");
             //  } 
             #endregion
-
+            #region Quentifier Operators Return Boolean 
+            // var Result = ProductsList.Any();
+            // // If Sequence Contains At Least One Element => True 
+            // Result = ProductsList.Any(P => P.UnitsInStock == 0);
+            // // If Sequence Contains At Least One Element Match Condition => True 
+            // Result = ProductsList.Any(P => P.UnitsInStock > 1000); // False 
+            // Result = ProductsList.All(P => P.UnitsInStock == 1);
+            // // If All Elements in Sequence Match Condition Return True 
+            // var Seq01= Enumerable.Range(0, 100); // 0..99 
+            // var Seq02= Enumerable.Range(0, 100); // 0..99 
+            // Result = Seq01.SequenceEqual(Seq02);
+            // Console.WriteLine(Result);
+            #endregion
 
         }
     }
