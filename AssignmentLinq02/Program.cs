@@ -127,6 +127,110 @@ namespace AssignmentLinq02
             // }
             #endregion
 
+            /*======================================================*/
+
+            #region LINQ - Aggregate Operators
+            #region 1. Get the total units in stock for each product category.
+            //  var totalUnitsByCategory = ProductsList
+            //           .GroupBy(p => p.Category)
+            //              .Select(g => new
+            //              {
+            //                  Category = g.Key,
+            //                  TotalUnitsInStock = g.Sum(p => p.UnitsInStock)
+            //              });
+            // 
+            //  foreach (var item in totalUnitsByCategory)
+            //  {
+            //      Console.WriteLine($"Category: {item.Category}, Total Units in Stock: {item.TotalUnitsInStock}");
+            //  } 
+            #endregion
+            #region 2. Get the cheapest price among each category's products.
+            //  var cheapestPriceByCategory = ProductsList
+            //      .GroupBy(p => p.Category)
+            //      .Select(g => new
+            //      {
+            //          Category = g.Key,
+            //          CheapestPrice = g.Min(p => p.UnitPrice)
+            //      });
+            //
+            //  foreach (var item in cheapestPriceByCategory)
+            //  {
+            //      Console.WriteLine($"Category: {item.Category}, Cheapest Price: {item.CheapestPrice}");
+            //  }
+
+            #endregion
+            #region 3. Get the products with the cheapest price in each category (Use Let).
+            // var cheapestProductsByCategory = from p in ProductsList
+            //                                  group p by p.Category into g
+            //                                  let minPrice = g.Min(p => p.UnitPrice)
+            //                                  select new
+            //                                  {
+            //                                      Category = g.Key,
+            //                                      CheapestProducts = g.Where(p => p.UnitPrice == minPrice)
+            //                                  };
+            //
+            // foreach (var item in cheapestProductsByCategory)
+            // {
+            //     Console.WriteLine($"Category: {item.Category}");
+            //     foreach (var product in item.CheapestProducts)
+            //     {
+            //         Console.WriteLine($"  Product: {product.ProductName}, Price: {product.UnitPrice}");
+            //     }
+            // }
+
+            #endregion
+            #region 4. Get the most expensive price among each category's products.
+            // var mostExpensivePriceByCategory = ProductsList
+            //     .GroupBy(p => p.Category)
+            //     .Select(g => new
+            //
+            //     {
+            //          Category = g.Key,
+            //          MostExpensivePrice = g.Max(p => p.UnitPrice)
+            //     });
+            //
+            // foreach (var item in mostExpensivePriceByCategory)
+            // {
+            //     Console.WriteLine($"Category: {item.Category}, Most Expensive Price: {item.MostExpensivePrice}");
+            // }
+
+            #endregion
+            #region 5. Get the products with the most expensive price in each category.
+            // var mostExpensiveProductsByCategory = from p in ProductsList
+            //                                       group p by p.Category into g
+            //                                       let maxPrice = g.Max(p => p.UnitPrice)
+            //                                       select new
+            //                                       {
+            //                                           Category = g.Key,
+            //                                           MostExpensiveProducts = g.Where(p => p.UnitPrice == maxPrice)
+            //                                       };
+            //
+            // foreach (var item in mostExpensiveProductsByCategory)
+            // {
+            //     Console.WriteLine($"Category:{item.Category}");
+            //     foreach (var product in item.MostExpensiveProducts)
+            //     {
+            //         Console.WriteLine($"Product: {product.ProductName}, Price: {product.UnitPrice}");
+            //     }
+            // }
+
+            #endregion
+            #region 6. Get the average price of each category's products.
+            //  var averagePriceByCategory = ProductsList
+            //      .GroupBy(p => p.Category)
+            //      .Select(g => new
+            //      {
+            //          Category = g.Key,
+            //          AveragePrice = g.Average(p => p.UnitPrice)
+            //      });
+            //  foreach (var item in averagePriceByCategory)
+            //  {
+            //      Console.WriteLine($"Category: {item.Category}, Average Price: {item.AveragePrice}");
+            //  }
+            #endregion
+            #endregion
+           
+
         }
     }
 }
