@@ -75,7 +75,29 @@ namespace AssignmentLinq02
             //     Console.Write($"{item} ");
             // }
             #endregion
-           
+            #region set operators Deffered Execution 
+            //   var Seq01= Enumerable.Range(0, 100); // 0..99 
+
+            //  var Seq02 =Enumerable.Range(50, 100); // 50..149 
+            //  var Result = Seq01. Union (Seq02); //0..149 ->  Remove Duplication
+            // var Result = Seq01.Concat(Seq02); //0..49 + 50..149
+            // Result = Result.Distinct(); // remove duplication
+            //   Result = Seq01.Intersect(Seq02); //50..99
+            // var Result = Seq01.Except(Seq02); //0 ..49
+
+            //  Console.WriteLine("\n===================SEQ01================");
+            //  foreach (var item in Seq01) Console.Write($"{item}, ");
+            //  Console.WriteLine("\n===================SEQ02================");
+            //  foreach (var item in Seq02)
+            //      Console.Write($"{item} ");
+            //  Console.WriteLine("\n===================concat================");
+            //  foreach (var item in Result)
+            //  {
+            //      Console.Write($"{item}, ");
+            //  } 
+            #endregion
+
+
         }
     }
 }
