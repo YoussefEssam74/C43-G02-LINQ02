@@ -390,7 +390,57 @@ namespace AssignmentLinq02
 
 
             #endregion
-          
+            #region LINQ – Grouping Operators
+            #region 1. Use group by to partition a list of numbers by their remainder when divided by 5
+            // List<int> numbers = new List<int>{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+            // var groupedNumbers = numbers.GroupBy(n => n % 5);
+            //
+            // foreach (var group in groupedNumbers)
+            // {
+            //     Console.WriteLine($"Numbers with a remainder of {group.Key} when divided by 5:");
+            //     foreach (var number in group)
+            //     {
+            //         Console.WriteLine(number);
+            //     }
+            //     Console.WriteLine();
+            // }
+
+            #endregion
+            #region 2.Uses group by to partition a list of words by their first letter.Use dictionary_english.txt for Input
+            // string[] words = File.ReadAllLines("dictionary_english.txt");
+            //
+            // var groupedWords = words
+            //     .Where(word => !string.IsNullOrEmpty(word)) 
+            //     .GroupBy(word => word[0]) 
+            //     .OrderBy(g => g.Key);
+            // foreach (var group in groupedWords)
+            // {
+            //     Console.WriteLine($"Words starting with '{group.Key}':");
+            //     foreach (var word in group.Take(5))
+            //     { 
+            //         Console.WriteLine($"- {word}");
+            //     }
+            //     Console.WriteLine($"Total words: {group.Count()}\n");
+            // }
+
+            #endregion
+            #region 3.Use Group By with a custom comparer that matches words that are consists of the same Characters Together
+            // string[] words = { "from", "salt", "earn", "last", "near", "form" };
+            //
+            // var groupedWords = words.GroupBy(word => String.Concat(word.OrderBy(c => c)));
+            //
+            // foreach (var group in groupedWords)
+            // {
+            //     foreach (var word in group)
+            //     {
+            //         Console.WriteLine(word);
+            //     }
+            //     Console.WriteLine("....");
+            // }
+            #endregion
+
+            #endregion #region LINQ - Set Operators
+
 
 
 
