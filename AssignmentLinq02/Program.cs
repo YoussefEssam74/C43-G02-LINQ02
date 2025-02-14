@@ -229,7 +229,123 @@ namespace AssignmentLinq02
             //  }
             #endregion
             #endregion
-           
+            #region LINQ - Set Operators
+            #region 1. Find the unique Category names from Product List
+            //   var uniqueCategories = ProductsList
+            //       .Select(p => p.Category)
+            //       .Distinct();
+            //   foreach (var category in uniqueCategories)
+            //   {
+            //       Console.WriteLine(category);
+            //   }
+            #endregion
+            #region 2. Produce a Sequence containing the unique first letter from both product and customer names.
+            var productFirstLetters = ProductsList
+                .Select(p => p.ProductName[0]);
+
+            var customerFirstLetters = CustomersList
+                .Select(c => c.CustomerName[0]);
+
+            var uniqueFirstLetters = productFirstLetters
+                .Union(customerFirstLetters)
+                .Distinct();
+
+            // foreach (var letter in uniqueFirstLetters)
+            // {
+            //     Console.WriteLine(letter);
+            // }
+            #endregion
+            #region 3. Create one sequence that contains the common first letter from both product and customer names.
+            //var commonFirstLetters = productFirstLetters
+            //    .Intersect(customerFirstLetters);
+            //
+            //foreach (var letter in commonFirstLetters)
+            //{
+            //    Console.WriteLine(letter);
+            //}
+            #endregion
+            #region 4.Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+            // var productOnlyFirstLetters = productFirstLetters.Except(customerFirstLetters);
+            //
+            // foreach (var letter in productOnlyFirstLetters)
+            // {
+            //     Console.WriteLine(letter);
+            // }
+            #endregion
+            #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates.
+            //  var productLastThreeChars = ProductsList
+            //      .Select(p => p.ProductName.Length >= 3 ? p.ProductName.Substring(p.ProductName.Length - 3) : p.ProductName);
+            //
+            //  var customerLastThreeChars = CustomersList
+            //      .Select(c => c.CustomerName.Length >= 3 ? c.CustomerName.Substring(c.CustomerName.Length - 3) : c.CustomerName);
+            //
+            //  var allLastThreeChars = productLastThreeChars
+            //      .Concat(customerLastThreeChars);
+            //
+            //  foreach (var chars in allLastThreeChars)
+            //  {
+            //      Console.WriteLine(chars);
+            //  }
+            #endregion
+
+            #endregion
+            #region LINQ - Partitioning Operators
+            #region 1. Get the first 3 orders from customers in Washington
+            //  var firstThreeOrdersInWashington = CustomersList
+            //      .Where(c => c.Region == "WA")
+            //      .SelectMany(c => c.Orders)
+            //      .Take(3);
+            // 
+            //  foreach (var order in firstThreeOrdersInWashington)
+            //  {
+            //      Console.WriteLine(order);
+            //  }
+            #endregion
+            #region 2. Get all but the first 2 orders from customers in Washington
+            // var allButFirstTwoOrdersInWashington = CustomersList
+            //     .Where(c => c.Region == "WA")
+            //     .SelectMany(c => c.Orders)
+            //     .Skip(2);
+            //
+            // foreach (var order in allButFirstTwoOrdersInWashington)
+            // {
+            //     Console.WriteLine(order);
+            // }
+            #endregion
+            #region 3. Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+            // int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //
+            // var result = numbers.TakeWhile((num, index) => num >= index);
+            //
+            // foreach (var num in result)
+            // {
+            //     Console.WriteLine(num);
+            // }
+            #endregion
+            #region 4. Get the elements of the array starting from the first element divisible by 3.
+            // int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //
+            // var result = numbers.SkipWhile(num => num % 3 != 0);
+            //
+            // foreach (var num in result)
+            // {
+            //     Console.WriteLine(num);
+            // }
+            #endregion
+            #region 5. Get the elements of the array starting from the first element less than its position.
+            // int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //
+            // var result = numbers.SkipWhile((num, index) => num >= index);
+            //
+            // foreach (var num in result)
+            // {
+            //     Console.WriteLine(num);
+            // }
+            #endregion
+            #endregion
+          
+          
+
 
         }
     }
