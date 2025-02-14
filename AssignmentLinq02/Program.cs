@@ -343,8 +343,56 @@ namespace AssignmentLinq02
             // }
             #endregion
             #endregion
+            #region LINQ - Quantifiers
+            #region 1. Determine if any of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First) contain the substring 'ei'.
+
+            // string[] words = File.ReadAllLines("dictionary_english.txt");
+            //
+            // bool containsSubstring = words.Any(word => word.Contains("ei"));
+            // Console.WriteLine(containsSubstring ? "Yes, at least one word contains 'ei'." : "No words contain 'ei'.");
+            #endregion
+            #region 2. Return a grouped a list of products only for categories that have at least one product that is out of stock.
+            //  var categoriesWithOutOfStock = ProductsList
+            //  .GroupBy(p => p.Category)
+            //      .Where(g => g.Any(p => p.UnitsInStock == 0))
+            //      .Select(g => new {
+            //          Category = g.Key,
+            //          Products = g.ToList()
+            //      });
+            //  foreach (var category in categoriesWithOutOfStock)
+            //  {
+            //      Console.WriteLine($"Category: {category.Category}");
+            //      foreach (var product in category.Products)
+            //      {
+            //          Console.WriteLine($"{product.ProductName} (Stock: {product.UnitsInStock})");
+            //      }
+            //  }
+
+            #endregion
+            #region 3. Return a grouped a list of products only for categories that have all of their products in stock.
+            // var categoriesAllInStock = ProductsList
+            //     .GroupBy(p => p.Category)
+            //     .Where(g => g.All(p => p.UnitsInStock > 0))
+            //     .Select(g => new {
+            //         Category = g.Key,
+            //         Products = g.ToList()
+            //     });
+            //
+            // foreach (var category in categoriesAllInStock)
+            // {
+            //     Console.WriteLine($"Category: {category.Category}");
+            //     foreach (var product in category.Products)
+            //     {
+            //         Console.WriteLine($"{product.ProductName} (Stock: {product.UnitsInStock})");
+            //     }
+            // }
+            #endregion
+
+
+            #endregion
           
-          
+
+
 
 
         }
