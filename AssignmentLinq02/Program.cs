@@ -1,4 +1,5 @@
-﻿using Day01LinQ;
+﻿using static Day01LinQ.ListGenerator;
+
 
 namespace AssignmentLinq02
 {
@@ -55,8 +56,26 @@ namespace AssignmentLinq02
             //  }
 
             #endregion
-
-
+            #region Generation Operators Deffered Execution 
+            // Valid Only With Fluent Syntax only 
+            // The Only Way To Call Them Is As Static Methods From Class Enumerable 
+            //var Result = Enumerable. Range(0, 100); // 8..99 
+            //Result = Enumerable. Repeat(2, 100); 
+            //// Return IEnumerable Of 100 Element each One = 2 
+            //var Result Enumerable.Repeat(new Product(), 100);
+            // Return IEnumerable Of 100 Product 
+            // var array Product Enumerable. Empty<Product>().ToArray();
+            //Product[] Products = new Product[0];
+            // Both Will Generate an Empty Array of Products
+            //var List Enumerable.Empty<Product>().ToList();
+            //  List<Product> Products02 = new List<Product>();
+            // Both Will Generate An Empty List Of Product 
+            // foreach (var item in Result)
+            // {
+            //     Console.Write($"{item} ");
+            // }
+            #endregion
+           
         }
     }
 }
